@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              tools:context=".ui.fragment.MainFragment"
+              tools:showIn="@layout/activity_main"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorPrimaryLight">
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView style="@style/ChronoCard"
+                                            android:id="@+id/cardv_chronometer"
+                                            android:layout_marginEnd="21dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_marginTop="50dp"
+                                            android:layout_marginStart="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/text_chronometer"
+                android:text="@string/initial_display"
+                android:textSize="45sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/chronometerInitial" />
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/layout_control_buttons"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/lowerPanelBackground">
+
+            <ImageButton
+                android:id="@+id/button_add_lap"
+                android:rotation="180"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:src="@android:drawable/ic_menu_set_as"
+                android:background="@color/lowerPanelBackground" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/lowerPanelSeparator" />
+
+            <ImageButton
+                android:id="@+id/button_reset"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:src="@android:drawable/ic_menu_rotate"
+                android:background="@color/lowerPanelBackground" />
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabutton_start_stop"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/cardv_chronometer"
+            android:src="@android:drawable/ic_media_play" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_initial_hint"
+            android:text="@string/initial_hint"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:paddingEnd="35dp"
+            android:paddingStart="35dp"
+            android:textAlignment="center"
+            android:textStyle="italic|bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorPrimaryHint"
+            android:background="@color/lapsPanelBackground" />
+
+        <TextView
+            android:id="@+id/text_laps_label"
+            android:text="@string/laps"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryHint" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvw_laps_list"
+            android:divider="@null"
+            android:visibility="gone"
+            android:scrollbars="vertical"
+            android:clipToPadding="false"
+            android:layout_gravity="start"
+            android:choiceMode="singleChoice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lapsPanelBackground"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin" />
+
+    </LinearLayout>
+
+</LinearLayout>

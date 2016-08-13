@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NIFS Stopwatch</string>
+    <string name="stopwatch">Stopwatch</string>
+
+    <string name="initial_display">00:00.000</string>
+    <string name="initial_hint">To add a lap, use the bottom left button; to restart the stopwatch(and clean all laps), use the bottom right button.</string>
+    <string name="laps">Laps</string>
+</resources>
